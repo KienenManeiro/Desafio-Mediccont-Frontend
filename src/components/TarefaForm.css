@@ -1,0 +1,32 @@
+.tarefa-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.tarefa-form h2 {
+  margin-bottom: 15px;
+}
+
+.tarefa-form input,
+.tarefa-form select,
+.tarefa-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tarefa-form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.tarefa-form button:hover {
+  background-color: #45a049;
+}
