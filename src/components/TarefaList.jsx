@@ -1,12 +1,11 @@
 //listagem e ações
-import React, { useState } from 'react';
-import './TarefaList.css'; 
+import React, { useState } from "react";
+import "./TarefaList.css";
+import moment from "moment";
 
 const TarefaList = ({ tarefas, onDelete, onEdit }) => {
-  
-  const [hover, setHover] = useState(-1);//estudar mais a funcionalidade de hooks
-  function deleteButton(tarefa)
-  {
+  const [hover, setHover] = useState(-1); //estudar mais a funcionalidade de hooks
+  function deleteButton(tarefa) {
     console.log(tarefa);
     onDelete(tarefa.id);
   }
@@ -18,14 +17,20 @@ const TarefaList = ({ tarefas, onDelete, onEdit }) => {
       ) : (
         <ul>
           {tarefas.map((tarefa, index) => (
-
-            <li key={index} 
-              onMouseEnter={e => setHover(index) } 
-              onMouseLeave={e => setHover(-1)}
+            <li
+              key={index}
+              onMouseEnter={(e) => setHover(index)}
+              onMouseLeave={(e) => setHover(-1)}
             >
-              <span>{tarefa.tarefa} - {tarefa.status}</span>
+              <span>
+                {" "}
+                {moment(tarefa.dataInicial).utc().format("DD/MM/YYYY")}{" "}
+              </span>
+              <span>
+                {tarefa.tarefa} - {tarefa.status}
+              </span>
               {hover === index && <span>{tarefa.observacao} </span>}
-              <div className='btns'>
+              <div className="btns">
                 <button onClick={() => onEdit(tarefa)}>Editar</button>
                 <button onClick={() => deleteButton(tarefa)}>Deletar</button>
               </div>

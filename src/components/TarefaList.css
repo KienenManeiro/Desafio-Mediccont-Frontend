@@ -24,12 +24,10 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-
-.tarefa-list btns{
-  display:flex;
+.tarefa-list btns {
+  display: flex;
   justify-content: flex-end;
 }
-
 
 .tarefa-list button {
   background-color: #f44336;
